@@ -15,6 +15,8 @@ import card, {
   Preview as CardPreview,
 } from '../components/card/card.component.yml'
 
+import parentBanner from '../parent-namespace/components/banner/banner.component.yml'
+
 export default {
   title: 'Page with imported SDC',
   render: () => {
@@ -22,7 +24,7 @@ export default {
       ${header.component({ ...HeaderPreview.args })}
       ${banner.component({ ...BannerPreview.args })}
       ${paragraph.component({
-        content: () => `  
+        content: () => `
           ${breadcrumbs.component({
             items: [
               {
@@ -61,10 +63,11 @@ export default {
       ${paragraph.component({
         label: 'Paragraph with Accordions',
         content: () => `
-          ${accordion.component({ content: 'Test', title: 'Test', name: 'acc' })}
-          ${accordion.component({ content: 'Test', title: 'Test', name: 'acc' })}
+          ${accordion.component({ content: 'Accordion content 1', title: 'Accordion 1', name: 'acc' })}
+          ${accordion.component({ content: 'Accordion content 2', title: 'Accordion 2', name: 'acc' })}
         `,
       })}
+      ${parentBanner.component({ content: 'Banner from parent namespace' })}
 
     `
   },

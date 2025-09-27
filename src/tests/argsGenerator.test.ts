@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest'
 import generateStorybookArgs from '../argsGenerator'
-import { SDCSchema } from '../sdc'
+import type { SDCSchema } from '../sdc.d.ts'
 
 describe('generateStorybookArgs', () => {
   it('should generate arguments from properties', () => {
@@ -22,7 +22,7 @@ describe('generateStorybookArgs', () => {
   it('should generate arguments from slots', () => {
     const content: SDCSchema = {
       slots: {
-        slot1: { type: 'string' },
+        slot1: { title: 'slot1' },
       },
       $defs: {},
       name: '',
@@ -41,7 +41,7 @@ describe('generateStorybookArgs', () => {
         },
       },
       slots: {
-        slot1: { type: 'string' },
+        slot1: { title: 'slot1' },
       },
       $defs: {},
       name: '',
